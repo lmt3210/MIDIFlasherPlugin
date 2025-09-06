@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>MIDIFlasher Help</title>
+<style>
+body { font-family: Verdana, Tahoma, Arial, Sans-serif; font-size: 10px;
+       margin: 20px; padding: 0; color: #ffffff; }
+h1 { font-family: Verdana, Tahoma, Arial, Sans-serif;
+     font-weight: normal; }
+h1 { font-size: 14px; line-height: 1; color: #ffffff; }
+.lttable { border: 1px solid white; border-collapse: collapse; padding: 3px;
+           vertical-align: top; text-align: left; }
+.lttable th, .lttable td, .lttable tr { padding: 3px;
+                                        border: solid 1px white; }
+</style>
+</head>
+	<body>
+		<div>
+            <br /><br />
+            <h1>Welcome</h1>
+            MIDIFlasher is a music device audio unit that displays up
+            to 99 different colors based on MIDI input. One practical
+            use is as a visual metronome.
+            <br /><br />
+            <h1>Usage</h1>
+            Insert MIDIThru into a DAW instrument track.
+            MIDI note on messages will determine the color
+            displayed per the table below. Note off messages and note
+            numbers not in the table will display the background color.
+            <br /><br />
+            Note names in the table consider middle C to be MIDI note
+            60 or C4. Korg considers C4 to be middle C; Roland and
+            Yamaha consider C3 to be middle C. Many DAWs allow the user
+            to select C3, C4, or sometimes C5 to be middle C. Please
+            consider this when attempting to select a specific color
+            via MIDI.
+            <br ><br />
+            All MIDI traffic except system messages (system exclusive,
+            sequencer start, MIDI clock, active sensing, etc.) are passed
+            through MIDIFlasher unchanged.
+            <br /><br /><br />
+  <table class="lttable"
+   style="width:35%; margin-left: 30px;" summary="">
+  <tr><th style="width:25%">Note Number</th>
+  <th style="width:25%">Note Name</th>
+  <th style="width:25%">Color</th>
+  <th style="width:25%">Hex Color Code</th></tr>
+  <tr><td>13</td><td>C#0</td><td>Alice Blue</td><td>#f0f8ff</td></tr>
+  <tr><td>14</td><td>D0</td><td>Aqua</td><td>#00ffff</td></tr>
+  <tr><td>15</td><td>D#0</td><td>Aquamarine</td><td>#7fffd4</td></tr>
+  <tr><td>16</td><td>E0</td><td>Azure</td><td>#f0ffff</td></tr>
+  <tr><td>17</td><td>F0</td><td>Blue</td><td>#0000ff</td></tr>
+  <tr><td>18</td><td>F#0</td><td>Blue Violet</td><td>#8a2be2</td></tr>
+  <tr><td>19</td><td>G0</td><td>Brown</td><td>#a52a2a</td></tr>
+  <tr><td>20</td><td>G#0</td><td>Burlywood</td><td>#deb887</td></tr>
+  <tr><td>21</td><td>A0</td><td>Cadet Blue</td><td>#5f9ea0</td></tr>
+  <tr><td>22</td><td>A#0</td><td>Chartreuse</td><td>#7fff00</td></tr>
+  <tr><td>23</td><td>B0</td><td>Chocolate</td><td>#d2691e</td></tr>
+  <tr><td>24</td><td>C1</td><td>Coral</td><td>#ff7f50</td></tr>
+  <tr><td>25</td><td>C#1</td><td>Cornflower Blue</td><td>#6495ed</td></tr>
+  <tr><td>26</td><td>D1</td><td>Cornsilk</td><td>#fff8dc</td></tr>
+  <tr><td>27</td><td>D#1</td><td>Crimson</td><td>#dc143c</td></tr>
+  <tr><td>28</td><td>E1</td><td>Cyan</td><td>#00ffff</td></tr>
+  <tr><td>29</td><td>F1</td><td>Dark Blue</td><td>#00008b</td></tr>
+  <tr><td>30</td><td>F#1</td><td>Dark Cyan</td><td>#008b8b</td></tr>
+  <tr><td>31</td><td>G1</td><td>Dark Goldenrod</td><td>#b8860b</td></tr>
+  <tr><td>32</td><td>G#1</td><td>Dark Green</td><td>#006400</td></tr>
+  <tr><td>33</td><td>A1</td><td>Dark Magenta</td><td>#8b008b</td></tr>
+  <tr><td>34</td><td>A#1</td><td>Dark Orange</td><td>#ff8c00</td></tr>
+  <tr><td>35</td><td>B1</td><td>Dark Orchid</td><td>#9932cc</td></tr>
+  <tr><td>36</td><td>C2</td><td>Dark Red</td><td>#8b0000</td></tr>
+  <tr><td>37</td><td>C#2</td><td>Dark Salmon</td><td>#e9967a</td></tr>
+  <tr><td>38</td><td>D2</td><td>Dark Sea Green</td><td>#8fbc8f</td></tr>
+  <tr><td>39</td><td>D#2</td><td>Dark Slate Blue</td><td>#483d8b</td></tr>
+  <tr><td>40</td><td>E2</td><td>Dark Turquoise</td><td>#00ced1</td></tr>
+  <tr><td>41</td><td>F2</td><td>Dark Violet</td><td>#9400d3</td></tr>
+  <tr><td>42</td><td>F#2</td><td>Deep Pink</td><td>#ff1493</td></tr>
+  <tr><td>43</td><td>G2</td><td>Deep Sky Blue</td><td>#00bfff</td></tr>
+  <tr><td>44</td><td>G#2</td><td>Dodger Blue</td><td>#1e90ff</td></tr>
+  <tr><td>45</td><td>A2</td><td>Forest Green</td><td>#228b22</td></tr>
+  <tr><td>46</td><td>A#2</td><td>Fuchsia</td><td>#ff00ff</td></tr>
+  <tr><td>47</td><td>B2</td><td>Gold</td><td>#ffd700</td></tr>
+  <tr><td>48</td><td>C3</td><td>Goldenrod</td><td>#daa520</td></tr>
+  <tr><td>49</td><td>C#3</td><td>Green</td><td>#00ff00</td></tr>
+  <tr><td>50</td><td>D3</td><td>Hot Pink</td><td>#ff69b4</td></tr>
+  <tr><td>51</td><td>D#3</td><td>Indigo</td><td>#4b0082</td></tr>
+  <tr><td>52</td><td>E3</td><td>Ivory</td><td>#fffff0</td></tr>
+  <tr><td>53</td><td>F3</td><td>Khaki</td><td>#f0e68c</td></tr>
+  <tr><td>54</td><td>F#3</td><td>Lavender</td><td>#e6e6fa</td></tr>
+  <tr><td>55</td><td>G3</td><td>Lawn Green</td><td>#7cfc00</td></tr>
+  <tr><td>56</td><td>G#3</td><td>Light Blue</td><td>#add8e6</td></tr>
+  <tr><td>57</td><td>A3</td><td>Light Coral</td><td>#f08080</td></tr>
+  <tr><td>58</td><td>A#3</td><td>Light Cyan</td><td>#e0ffff</td></tr>
+  <tr><td>59</td><td>B3</td><td>Light Green</td><td>#90ee90</td></tr>
+  <tr><td>60</td><td>C4</td><td>Light Pink</td><td>#ffb6c1</td></tr>
+  <tr><td>61</td><td>C#4</td><td>Light Salmon</td><td>#ffa07a</td></tr>
+  <tr><td>62</td><td>D4</td><td>Light Sea Green</td><td>#20b2aa</td></tr>
+  <tr><td>63</td><td>D#4</td><td>Light Sky Blue</td><td>#87cefa</td></tr>
+  <tr><td>64</td><td>E4</td><td>Light Steel Blue</td><td>#b0c4de</td></tr>
+  <tr><td>65</td><td>F4</td><td>Light Yellow</td><td>#ffffe0</td></tr>
+  <tr><td>66</td><td>F#4</td><td>Lime</td><td>#00ff00</td></tr>
+  <tr><td>67</td><td>G4</td><td>Lime Green</td><td>#32cd32</td></tr>
+  <tr><td>68</td><td>G#4</td><td>Magenta</td><td>#ff00ff</td></tr>
+  <tr><td>69</td><td>A4</td><td>Maroon</td><td>#800000</td></tr>
+  <tr><td>70</td><td>A#4</td><td>Medium Aquamarine</td><td>#66cdaa</td></tr>
+  <tr><td>71</td><td>B4</td><td>Medium Blue</td><td>#0000cd</td></tr>
+  <tr><td>72</td><td>C5</td><td>Medium Purple</td><td>#9370db</td></tr>
+  <tr><td>73</td><td>C#5</td><td>Medium Sea Green</td><td>#3cb371</td></tr>
+  <tr><td>74</td><td>D5</td><td>Medium Slate Blue</td><td>#7b68ee</td></tr>
+  <tr><td>75</td><td>D#5</td><td>Medium Spring Green</td><td>#00fa9a</td></tr>
+  <tr><td>76</td><td>E5</td><td>Medium Turquoise</td><td>#48d1cc</td></tr>
+  <tr><td>77</td><td>F5</td><td>Medium Violet Red</td><td>#c71585</td></tr>
+  <tr><td>78</td><td>F#5</td><td>Midnight Blue</td><td>#191970</td></tr>
+  <tr><td>79</td><td>G5</td><td>Misty Rose</td><td>#ffe4e1</td></tr>
+  <tr><td>80</td><td>G#5</td><td>Moccasin</td><td>#ffe4b5</td></tr>
+  <tr><td>81</td><td>A5</td><td>Navy</td><td>#000080</td></tr>
+  <tr><td>82</td><td>A#5</td><td>Olive</td><td>#808000</td></tr>
+  <tr><td>83</td><td>B5</td><td>Orange</td><td>#ffa500</td></tr>
+  <tr><td>84</td><td>C6</td><td>Orange Red</td><td>#ff4500</td></tr>
+  <tr><td>85</td><td>C#6</td><td>Peru</td><td>#cd853f</td></tr>
+  <tr><td>86</td><td>D6</td><td>Pink</td><td>#ffc0cb</td></tr>
+  <tr><td>87</td><td>D#6</td><td>Plum</td><td>#dda0dd</td></tr>
+  <tr><td>88</td><td>E6</td><td>Powder Blue</td><td>#b0e0e6</td></tr>
+  <tr><td>89</td><td>F6</td><td>Purple</td><td>#800080</td></tr>
+  <tr><td>90</td><td>F#6</td><td>Red</td><td>#ff0000</td></tr>
+  <tr><td>91</td><td>G6</td><td>Rosy Brown</td><td>#bc8f8f</td></tr>
+  <tr><td>92</td><td>G#6</td><td>Royal Blue</td><td>#4169e1</td></tr>
+  <tr><td>93</td><td>A6</td><td>Saddle Brown</td><td>#8b4513</td></tr>
+  <tr><td>94</td><td>A#6</td><td>Salmon</td><td>#fa8072</td></tr>
+  <tr><td>95</td><td>B6</td><td>Sandy Brown</td><td>#f4a460</td></tr>
+  <tr><td>96</td><td>C7</td><td>Sea Green</td><td>#2e8b57</td></tr>
+  <tr><td>97</td><td>C#7</td><td>Seashell</td><td>#fff5ee</td></tr>
+  <tr><td>98</td><td>D7</td><td>Sienna</td><td>#a0522d</td></tr>
+  <tr><td>99</td><td>D#7</td><td>Silver</td><td>#c0c0c0</td></tr>
+  <tr><td>100</td><td>E7</td><td>Sky Blue</td><td>#87ceeb</td></tr>
+  <tr><td>101</td><td>F7</td><td>Slate Blue</td><td>#6a5acd</td></tr>
+  <tr><td>102</td><td>F#7</td><td>Spring Green</td><td>#00ff7f</td></tr>
+  <tr><td>103</td><td>G7</td><td>Steel Blue</td><td>#4682b4</td></tr>
+  <tr><td>104</td><td>G#7</td><td>Teal</td><td>#008080</td></tr>
+  <tr><td>105</td><td>A7</td><td>Thistle</td><td>#d8bfd8</td></tr>
+  <tr><td>106</td><td>A#7</td><td>Tomato</td><td>#ff6347</td></tr>
+  <tr><td>107</td><td>B7</td><td>Turquoise</td><td>#40e0d0</td></tr>
+  <tr><td>108</td><td>C8</td><td>Violet</td><td>#ee82ee</td></tr>
+  <tr><td>109</td><td>C#8</td><td>Wheat</td><td>#f5deb3</td></tr>
+  <tr><td>110</td><td>D8</td><td>White</td><td>#ffffff</td></tr>
+  <tr><td>111</td><td>D#8</td><td>Yellow</td><td>#ffff00</td></tr>
+  </table>
+            <br /><br />
+            <h1>Support</h1>
+            For comments, feature requests, or bug reports, send email
+            to <a href="mailto:software@larrymtaylor.com">
+            software@larrymtaylor.com</a>.
+            <br /><br />
+            <h1>Version History</h1>
+            1.0.4 (09/05/2025) Added pass-through for most MIDI data; added
+            an about box; updated the help.
+            <br /><br />
+            1.0.3 (04/01/2025) Fixed validation and operation in
+            GarageBand, Logic Pro, and Ardour.
+            <br /><br />
+            1.0.1 (03/23/2025) Initial release.
+            <br /><br />
+		</div>
+	</body>
+</html>
