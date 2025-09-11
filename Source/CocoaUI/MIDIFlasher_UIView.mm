@@ -146,8 +146,6 @@ OSStatus midiMonProc(void *userData, const AudioTimeStamp *timeStamp,
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-
     mMIDIControl.recordEnable = 0;
     
     // Stop timer
@@ -206,11 +204,19 @@ OSStatus midiMonProc(void *userData, const AudioTimeStamp *timeStamp,
     mColorIndex = 0;
     [mView display];
     [[mView window] setStyleMask:(NSWindowStyleMaskResizable |
-                                  NSWindowStyleMaskTitled |
-                                  NSWindowStyleMaskClosable)];
+                                  NSWindowStyleMaskTitled)];
     [[mView window] setMinSize:NSMakeSize(305, 210)];  // w, h
     [[mView window] setMaxSize:NSMakeSize(FLT_MAX, FLT_MAX)];
     [[mView window] setReleasedWhenClosed:NO];
+    NSButton *minimizeButton =
+        [[mView window] standardWindowButton:NSWindowMiniaturizeButton];
+    [minimizeButton setHidden:YES];
+    NSButton *maximizeButton =
+        [[mView window] standardWindowButton:NSWindowZoomButton];
+    [maximizeButton setHidden:YES];
+    NSButton *closeButton =
+        [[mView window] standardWindowButton:NSWindowCloseButton];
+    [closeButton setHidden:YES];
     NSButton *menuButton = [NSButton buttonWithTitle:@"" target:self
                             action:@selector(menuButton:)];
     [menuButton setButtonType:NSButtonTypeMomentaryPushIn];

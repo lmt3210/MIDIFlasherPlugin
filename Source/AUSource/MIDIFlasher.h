@@ -31,7 +31,7 @@
 #define LT_NO_COCOA
 #include "LTLog.h"
 
-#define kMIDIFlasherVersion 65540
+#define kMIDIFlasherVersion 0x010005
 
 // Custom properties IDs must be 64000 or greater
 // See AudioUnit/AudioUnitProperties.h for a list of
