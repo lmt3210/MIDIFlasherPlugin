@@ -1064,7 +1064,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Resources/CocoaView.plist;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Larry M. Taylor. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025-2026 Larry M. Taylor. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = CocoaView;
 				INFOPLIST_KEY_NSPrincipalClass = MIDIFlasher_ViewFactory;
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
@@ -1128,7 +1128,7 @@
 				INSTALL_PATH = Products;
 				LIBRARY_STYLE = BUNDLE;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_CODE_SIGN_FLAGS = "--verbose";

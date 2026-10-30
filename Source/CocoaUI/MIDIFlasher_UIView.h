@@ -1,7 +1,7 @@
 // 
 // MIDIFlasher_UIView.h 
 //
-// Copyright (c) 2020-2025 Larry M. Taylor
+// Copyright (c) 2020-2026 Larry M. Taylor
 //
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
@@ -31,7 +31,7 @@
 #define kMaximumEvents (1024 * 100)
 #define kAudioUnitCustomPropertyUICB 64056
 
-struct LTMIDIControl
+struct LTMIDIControlFlasher
 {
     int recordEnable;
     int readIndex;
@@ -63,7 +63,11 @@ struct LTMIDIControl
 
     // Menus
     NSMenu *mContextMenu;
-
+    
+    // Buttons
+    NSButton *mPlusButton;
+    NSButton *mMinusButton;
+    
     // Other windows
     NSWindow *mHelpWindow;
     NSWindow *mAboutBox;
@@ -71,7 +75,7 @@ struct LTMIDIControl
     // Other members
     bool mWindowSet;
     AudioUnit mAU;
-    struct LTMIDIControl mMIDIControl;
+    struct LTMIDIControlFlasher mMIDIControl;
     NSTimer *mMonitorTimer;
     
     // Logging

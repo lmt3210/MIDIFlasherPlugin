@@ -1,7 +1,7 @@
 // 
 // MIDIFlasher_UIView.mm
 //
-// Copyright (c) 2020-2025 Larry M. Taylor
+// Copyright (c) 2020-2026 Larry M. Taylor
 //
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
@@ -35,7 +35,7 @@ OSStatus midiMonProc(void *userData, const AudioTimeStamp *timeStamp,
                      UInt32 midiOutNum,
                      const struct MIDIPacketList *inPktList)
 {
-    struct LTMIDIControl *mc = (struct LTMIDIControl *)userData;
+    struct LTMIDIControlFlasher *mc = (struct LTMIDIControlFlasher *)userData;
     MIDIPacket *inPacket = (MIDIPacket *)inPktList->packet;
     
     for (int i = 0; i < inPktList->numPackets; i++)
@@ -242,6 +242,41 @@ OSStatus midiMonProc(void *userData, const AudioTimeStamp *timeStamp,
 
     NSArray *array = [NSArray arrayWithObjects:menuButton, nil];
     [mView setSubviews:array];
+    
+    // Create the resize buttons
+    mPlusButton = [[NSButton alloc] initWithFrame:NSMakeRect(10, 80, 30, 30)];
+    [mPlusButton setTitle:@"+"];
+    [mPlusButton setTarget:self];
+    [mPlusButton setAction:@selector(plusButtonPressed:)];
+    [mPlusButton setToolTip:
+     @"Use this button to increase MIDIFlasher size by 10%."];
+    [mView addSubview:mPlusButton];
+    
+    mMinusButton = [[NSButton alloc] initWithFrame:NSMakeRect(10, 50, 30, 30)];
+    [mMinusButton setTitle:@"-"];
+    [mMinusButton setTarget:self];
+    [mMinusButton setAction:@selector(minusButtonPressed:)];
+    [mMinusButton setToolTip:
+     @"Use this button to decrease MIDIFlasher size by 10%."];
+    [mView addSubview:mMinusButton];
+}
+
+- (void)plusButtonPressed:(id)sender
+{
+    NSRect newFrame = [mView frame];
+    newFrame.size.width *= 1.1;
+    newFrame.size.height *= 1.1;
+    [mView setFrame:newFrame];
+    [mView setNeedsDisplay:YES];
+}
+
+- (void)minusButtonPressed:(id)sender
+{
+    NSRect newFrame = [mView frame];
+    newFrame.size.width *= 0.9;
+    newFrame.size.height *= 0.9;
+    [mView setFrame:newFrame];
+    [mView setNeedsDisplay:YES];
 }
 
 - (void)monitorTimer:(NSTimer *)timer

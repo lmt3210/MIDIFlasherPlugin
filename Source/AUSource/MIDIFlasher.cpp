@@ -1,7 +1,7 @@
 // 
 // MIDIFlasher.cpp 
 //
-// Copyright (c) 2020-2025 Larry M. Taylor
+// Copyright (c) 2020-2026 Larry M. Taylor
 //
 // This software is provided 'as-is', without any express or implied
 // warranty. In no event will the authors be held liable for any damages
@@ -359,7 +359,10 @@ OSStatus MIDIFlasher::Render(AudioUnitRenderActionFlags &ioActionFlags,
                              const AudioTimeStamp &inTimeStamp,
                              UInt32 inNumberFrames) 
 {
+    // Audio buffers are zeroed in this Render call
     AUInstrumentBase::Render(ioActionFlags, inTimeStamp, inNumberFrames);
+    
+    // Process MIDI data
     mCallbackHelper.FireAtTimeStamp(inTimeStamp, mLog);
     mUICB.FireAtTimeStamp(inTimeStamp, mLog);
 
